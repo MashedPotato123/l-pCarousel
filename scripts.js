@@ -94,6 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       BioHeader.textContent = member.BioHeader;
       modalBio2.textContent = member.bio_2;
       modal.style.display = 'flex';
+
+      modalBio.classList.remove('long-text');
+      modalBio.textContent = member.bio;
+      const longTextThreshold = 750;
+        if (member.bio.length > longTextThreshold) {
+        modalBio.classList.add('long-text');
+    }
+    modal.style.display = 'flex';
   }
 
   function closeModal() {
