@@ -1,67 +1,63 @@
-.center-text {
-  text-align: center; 
-  margin-top: 30px;     
-  margin-bottom: 20px;  
-  padding: 10px 0;      
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
+}
+body {
+    /* 2. Apply Open Sans as the default font */
+    font-family: 'Open Sans', sans-serif;
     background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-  }
-  
-  .carousel-container {
+}
+.carousel-container {
     position: relative;
     width: 100%;
     max-width: 1300px;
     overflow: hidden;
-  }
-  
-  .carousel {
+}
+.carousel {
     display: flex;
+    flex-direction: row; 
     transition: transform 0.5s ease;
-  }
-  .carousel-item {
+}
+.carousel-item {
     flex: 0 0 25%;
     padding: 10px;
-  }
-  .carousel-item img {
+    cursor: pointer;
+}
+.carousel-item img {
     width: 100%;
     height: auto;
     object-fit: cover;
     filter: grayscale(100%);
     transition: filter 0.5s ease;
-  }
-  .carousel-item img:hover {
+    pointer-events: none;
+}
+.carousel-item:hover img {
     filter: grayscale(0%);
-  }
-  .item-text {
+}
+.item-text {
     margin-top: 10px;
     text-align: left;
-  }
-  .item-text h2 {
+}
+.item-text h2 {
     font-size: 20px;
     color: #000;
     font-weight: bold;
     margin-bottom: 4px;
-  }
-  .item-text p {
+}
+.item-text p {
     font-size: 16px;
     color: #555;
-  }
-  .arrow {
+}
+.arrow {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.8);
     border: none;
@@ -69,21 +65,120 @@
     cursor: pointer;
     padding: 10px;
     z-index: 2;
-  }
-  .arrow-left {
+    border-radius: 50%;
+}
+.arrow-left {
+    left: 10px;
+}
+.arrow-right {
+    right: 10px;
+}
+@media (max-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+}
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 10;
     left: 0;
-  }
-  .arrow-right {
-    right: 0;
-  }
-  @media (max-width: 1024px) {
-    .carousel-item {
-      flex: 0 0 50%; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: relative;
+}
+.modal-close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content img {
+    flex: 0 0 40%;
+    width: 40%;
+    object-fit: contain;
+}
+.modal-text-content {
+    flex: 1;
+}
+.modal-text-content h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+#modal-position {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 24px;
+}
+#modal-bio {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+#modal-bio-2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+#modal-bio-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 700; 
+}
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
-  }
-  @media (max-width: 600px) {
-    .carousel-item {
-      flex: 0 0 100%;
+    .modal-content img {
+        width: 60%;
+        margin-bottom: 15px;
     }
-  }
-  
+}
