@@ -85,28 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBio2 = document.getElementById('modal-bio-2');
   const closeModalBtn = document.querySelector('.modal-close-btn');
 
-  function openModal(index) {
-      const member = teamMembers[index];
-      modalImg.src = member.imgSrc;
-      modalName.textContent = member.name;
-      modalPosition.textContent = member.position;
-      modalBio.textContent = member.bio;
-      BioHeader.textContent = member.BioHeader;
-      modalBio2.textContent = member.bio_2;
-      modal.style.display = 'flex';
+function openModal(index) {
+    const member = teamMembers[index];
+    modalImg.src = member.imgSrc;
+    modalName.textContent = member.name;
+    modalPosition.textContent = member.position;
 
-      modalBio.classList.remove('long-text');
-      modalBio.textContent = member.bio;
-      const longTextThreshold = 750;
-        if (member.bio.length > longTextThreshold) {
+    modalBio.classList.remove('long-text');
+    modalBio.textContent = member.bio;
+    
+    const longTextThreshold = 750;
+    if (member.bio.length > longTextThreshold) {
         modalBio.classList.add('long-text');
     }
-    modal.style.display = 'flex';
-  }
+    
+    modal.classList.add('visible');
+}
 
-  function closeModal() {
-      modal.style.display = 'none';
-  }
+function closeModal() {
+    modal.classList.remove('visible');
+}
 
   document.getElementById('prev-btn').addEventListener('click', () => moveSlide(-1));
   document.getElementById('next-btn').addEventListener('click', () => moveSlide(1));
@@ -136,5 +134,3 @@ document.addEventListener('DOMContentLoaded', () => {
     moveSlide(0);
   });
 });
-
-//cache github
