@@ -37,14 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
           bio: "In her role as a consultant, Kyla has worked with the public sector and the private sector in a diverse range of industries, from retail and e-commerce to technology and service-based companies. She has helped businesses, from startups to established enterprises, navigate complex market landscapes. Kyla has a reputation for delivering results through unconventional methods. Her holistic approach to business strategy integrates leadership, influence, marketing, sales, operations, customer experience and stakeholder engagement."
       },
       {
-          name: "Jason Rost",
-          position: "Senior Communications Strategist",
-          imgSrc: "2.jpg",
-          bio: "Jason is an agile communications professional with a proven track record of success spanning over a decade in both corporate and non-profit realms. Drawing on his background in performing arts management, Jason brings a unique perspective to his work, balancing creative expression with a keen understanding of obtaining measurable business objectives. He loves to channel the wildest ideas into practical solutions. Jason excels at supporting client communication plans, building brand reputation, and leveraging organizational milestones and critical moments. He specializes in strategic internal and external communication planning, public relations, and event management. As a passionate wordsmith, he meticulously crafts compelling narratives focusing on timing, key messaging, and audience targeting to deliver impactful results. A little more about Jason: Residing in Ottawa with his wife and three children, Jason is a dedicated advocate for enriching experiences. Whether immersing himself in theatrical productions, art exhibitions, or a baseball game, he cherishes moments of cultural and social engagement. Jason’s commitment extends beyond personal interests; he serves on the Board of Directors for Kids Up Front Ottawa, striving to ensure underserved youth access unforgettable live experiences.",
-          BioHeader: "A little more about Jason:",
-          bio_2:"Residing in Ottawa with his wife and three children, Jason is a dedicated advocate for enriching experiences. Whether immersing himself in theatrical productions, art exhibitions, or a baseball game, he cherishes moments of cultural and social engagement. Jason’s commitment extends beyond personal interests; he serves on the Board of Directors for Kids Up Front Ottawa, striving to ensure underserved youth access unforgettable live experiences"
-      },
-      {
           name: "Laura Smith",
           position: "Business Operations & Client Services",
           imgSrc: "3.jpg",
