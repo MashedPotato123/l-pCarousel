@@ -1,52 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const carousel = document.getElementById('carousel');
-  let currentIndex = 0;
-  function moveSlide(direction) {
-    const itemsPerPage = getItemsPerPage();
-    const totalItems = carousel.children.length;
-    const maxIndex = Math.max(0, totalItems - itemsPerPage);
-
-    currentIndex += direction;
-
-    if (currentIndex > maxIndex) {
-      currentIndex = 0;
-    } else if (currentIndex < 0) {
-      currentIndex = maxIndex;
-    }
-    
-    const itemWidth = carousel.clientWidth / itemsPerPage;
-    const slideDistance = itemWidth * currentIndex;
-    
-    carousel.style.transform = `translateX(-${slideDistance}px)`;
-  }
-
-  function getItemsPerPage() {
-    if (window.innerWidth <= 600) {
-      return 1;
-    } else if (window.innerWidth <= 1024) {
-      return 2;
-    }
-    return 4;
-  }
   const teamMembers = [
       {
           name: "Kyla Taylor",
           position: "CEO & Stakeholder Relations",
           imgSrc: "1.jpg",
           bio: "In her role as a consultant, Kyla has worked with the public sector and the private sector in a diverse range of industries, from retail and e-commerce to technology and service-based companies. She has helped businesses, from startups to established enterprises, navigate complex market landscapes. Kyla has a reputation for delivering results through unconventional methods. Her holistic approach to business strategy integrates leadership, influence, marketing, sales, operations, customer experience and stakeholder engagement."
-      },
-      {
-          name: "Laura Smith",
-          position: "Business Operations & Client Services",
-          imgSrc: "3.jpg",
-          bio: "Laura is bringing her expertise in communication and operations to support our team and our clients with operations and project management, communications, and stakeholder relations. Laura has a Bachelor of Science in Human Kinetics, leadership accreditation, and over twelve years of experience in consultative and administrative management roles."
-      },
-      {
-          name: "Anastasia O’Hare",
-          position: "Systems & Processes",
-          imgSrc: "4.jpg",
-          bio: "Anastasia O’Hare is a seasoned and award-winning Customer Success and Sales professional with over 20 years of experience driving enterprise account management, customer success, and service delivery. Known for her ability to cultivate strong, trust-based relationships with clients, she has consistently achieved impressive retention rates of 98-100%. Anastasia’s expertise includes managing multimillion-dollar portfolios, identifying growth opportunities, and delivering tailored solutions that meet client business objectives. Her career spans roles in leading organizations, where she has excelled in driving customer satisfaction, creating strategic roadmaps, and growing accounts through upselling and cross-selling initiatives. With experience in SaaS, IT, finance, and CRM solutions, she brings a wealth of knowledge in project management, contract negotiation, and consultative sales."
       },
       {
           name: "Manu Jha",
@@ -98,9 +58,6 @@ function closeModal() {
     modal.classList.remove('visible');
 }
 
-  document.getElementById('prev-btn').addEventListener('click', () => moveSlide(-1));
-  document.getElementById('next-btn').addEventListener('click', () => moveSlide(1));
-
   document.querySelectorAll('.carousel-item').forEach(item => {
       item.addEventListener('click', () => {
           const index = item.getAttribute('data-index');
@@ -114,15 +71,5 @@ function closeModal() {
       if (event.target === modal) {
           closeModal();
       }
-  });
-  
-  window.addEventListener('resize', () => {
-    const itemsPerPage = getItemsPerPage();
-    const totalItems = carousel.children.length;
-    const maxIndex = Math.max(0, totalItems - itemsPerPage);
-    if (currentIndex > maxIndex) {
-      currentIndex = maxIndex;
-    }
-    moveSlide(0);
   });
 });
